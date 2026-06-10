@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Жалгас Толыбаев — Евразийский и казахстанский патентный поверенный</title>
 <meta name="description" content="Патенты, товарные знаки, промышленные образцы и авторское право в Казахстане и за рубежом. Патентный поверенный РК №174, евразийский патентный поверенный №490. Сопровождение от заявки до охранного документа.">
+<meta name="theme-color" content="#F6F7F9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Жалгас Толыбаев — патентный поверенный">
+<meta property="og:description" content="Патенты, товарные знаки и дизайн в Казахстане, странах ЕАПО и по международным процедурам. От заявки до охранного документа.">
+<meta property="og:image" content="https://sultanaskarovkz-bit.github.io/patent/hero.jpg">
+<meta property="og:url" content="https://sultanaskarovkz-bit.github.io/patent/">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23F5EFE0' stroke='%23A9853B' stroke-width='5'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia,serif' font-size='42' fill='%238A6C2C'%3E%E2%84%96%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,14 +34,17 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+section,footer{scroll-margin-top:76px}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:4px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   font-family:'Manrope',system-ui,sans-serif;
   background:var(--paper);
   color:var(--ink);
   line-height:1.65;
-  font-size:16.5px;
+  font-size:clamp(15.5px,1.5vw,16.5px);
   -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -81,6 +94,31 @@ nav.menu a:hover{color:var(--gold-deep);border-color:var(--gold)}
 .btn-sm{padding:10px 18px;font-size:14px}
 .topbar .btn-sm{display:inline-flex}
 @media(max-width:880px){nav.menu{display:none}.brand span{display:none}.topbar .wrap{height:60px}}
+
+/* burger + mobile menu */
+.burger{
+  display:none;background:none;border:1.5px solid var(--line);border-radius:10px;
+  width:42px;height:42px;cursor:pointer;color:var(--ink);
+  align-items:center;justify-content:center;flex:none;
+}
+.burger svg{pointer-events:none}
+.mnav{
+  display:none;position:fixed;top:60px;left:0;right:0;z-index:49;
+  background:var(--white);border-bottom:1px solid var(--line);
+  box-shadow:0 24px 40px -20px rgba(20,33,58,.25);
+  padding:10px 24px 22px;
+}
+.mnav.open{display:block}
+.mnav a{
+  display:block;padding:15px 4px;font-weight:700;font-size:16.5px;
+  border-bottom:1px solid var(--line);
+}
+.mnav a:last-of-type{border-bottom:none}
+.mnav .btn{margin-top:14px;width:100%;justify-content:center}
+@media(max-width:880px){
+  .burger{display:inline-flex}
+  .topbar .btn-sm{display:none}
+}
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;background:var(--white);border-bottom:1px solid var(--line)}
@@ -152,9 +190,22 @@ nav.menu a:hover{color:var(--gold-deep);border-color:var(--gold)}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.seal{animation:none}}
 @media(max-width:980px){
-  .hero .wrap{grid-template-columns:1fr;gap:48px;padding-top:56px;padding-bottom:64px}
-  .seal{right:6px;bottom:40px;width:104px;height:104px}
-  .hero-stats{gap:28px;flex-wrap:wrap}
+  .hero .wrap{grid-template-columns:1fr;gap:44px;padding-top:48px;padding-bottom:56px}
+  .hero .fig{max-width:420px;margin:0 auto;width:100%}
+  .hero .fig img{aspect-ratio:4/5;object-fit:cover;object-position:50% 28%}
+  .seal{right:-8px;bottom:48px;width:96px;height:96px}
+  .hero-stats{gap:14px;flex-wrap:wrap;justify-content:space-between}
+  .hstat{flex:1 1 30%;min-width:96px}
+  .hstat .n{font-size:25px}
+  .hstat .l{font-size:12px}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center}
+}
+@media(max-width:480px){
+  .wrap{padding:0 18px}
+  .hero h1{font-size:clamp(29px,8.4vw,34px)}
+  .hero .lead{font-size:16.5px}
+  .cred{font-size:11.5px;padding:7px 11px}
+  .seal{width:84px;height:84px;bottom:40px}
 }
 
 /* ---------- trust band ---------- */
@@ -218,7 +269,7 @@ section{padding:96px 0}
 
 /* about */
 .about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
-@media(max-width:940px){.about .wrap{grid-template-columns:1fr;gap:44px}}
+@media(max-width:940px){.about .wrap{grid-template-columns:1fr;gap:44px}.about .fig{order:2;max-width:480px;margin:0 auto;width:100%}}
 .about h2{font-size:clamp(28px,3.2vw,38px);margin-bottom:20px}
 .about p{color:var(--slate);margin-bottom:16px}
 .about p b{color:var(--ink);font-weight:700}
@@ -297,7 +348,7 @@ details .a{padding:0 24px 22px;color:var(--slate);font-size:15.5px}
 /* contact */
 .contact{background:var(--white);border-top:1px solid var(--line)}
 .contact .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-@media(max-width:940px){.contact .wrap{grid-template-columns:1fr;gap:44px}}
+@media(max-width:940px){.contact .wrap{grid-template-columns:1fr;gap:40px}.contact .fig{max-width:480px;margin:0 auto;width:100%}.contact .btn{width:100%;justify-content:center}}
 .contact h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:16px}
 .contact .lead{color:var(--slate);margin-bottom:30px;max-width:480px}
 .c-list{display:flex;flex-direction:column;gap:14px;margin-bottom:34px}
@@ -309,7 +360,12 @@ details .a{padding:0 24px 22px;color:var(--slate);font-size:15.5px}
 .c-item:hover{border-color:#D8C9A1;transform:translateX(4px)}
 .c-item .ic{width:42px;height:42px;border-radius:10px;background:var(--gold-tint);border:1px solid #E8DCBE;display:grid;place-items:center;color:var(--gold-deep);flex:none}
 .c-item .l{font-size:12.5px;color:var(--slate);font-family:'JetBrains Mono',monospace;letter-spacing:.06em}
-.c-item .v{font-weight:700;font-size:16px}
+.c-item .v{font-weight:700;font-size:16px;overflow-wrap:anywhere}
+.c-item{min-width:0}
+.c-item>div:last-child{min-width:0}
+.contact .wrap>*{min-width:0}
+.hero .wrap>*{min-width:0}
+.about .wrap>*{min-width:0}
 
 /* footer */
 footer{background:var(--ink);color:#8E9BB3;font-size:13.5px}
@@ -323,7 +379,13 @@ footer .mono{font-size:11px;letter-spacing:.08em}
   display:none;align-items:center;justify-content:center;padding:32px;cursor:zoom-out;
 }
 .lb.open{display:flex}
-.lb img{max-width:min(880px,94vw);max-height:90vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lb img{max-width:min(880px,94vw);max-height:88vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lb-close{
+  position:absolute;top:16px;right:20px;
+  width:46px;height:46px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.14);color:#fff;font-size:26px;line-height:1;
+}
+.lb-close:hover{background:rgba(255,255,255,.26)}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -356,12 +418,24 @@ footer .mono{font-size:11px;letter-spacing:.08em}
       <a href="#quals">Квалификация</a>
       <a href="#faq">Вопросы</a>
     </nav>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <svg id="burgerIco" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
     <a class="btn btn-gold btn-sm" href="https://wa.me/77066706010" target="_blank" rel="noopener">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.2Z"/></svg>
       WhatsApp
     </a>
   </div>
 </header>
+
+<div class="mnav" id="mnav">
+  <a href="#services">Услуги</a>
+  <a href="#docs">Результаты</a>
+  <a href="#about">Обо мне</a>
+  <a href="#quals">Квалификация</a>
+  <a href="#faq">Вопросы</a>
+  <a class="btn btn-gold" href="https://wa.me/77066706010" target="_blank" rel="noopener" style="border-bottom:none">Написать в WhatsApp</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" style="padding:0">
@@ -726,17 +800,34 @@ footer .mono{font-size:11px;letter-spacing:.08em}
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c0 .2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.2Z"/></svg>
 </a>
 
-<div class="lb" id="lb"><img id="lbimg" src="" alt="Документ крупно"></div>
+<div class="lb" id="lb">
+  <button class="lb-close" aria-label="Закрыть">&times;</button>
+  <img id="lbimg" src="" alt="Документ крупно">
+</div>
 
 <script>
+// мобильное меню
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+burger.addEventListener('click',()=>{
+  const open=mnav.classList.toggle('open');
+  burger.setAttribute('aria-expanded',open);
+  document.getElementById('burgerIco').innerHTML=open
+    ?'<path d="M6 6l12 12M18 6L6 18"/>'
+    :'<path d="M3 6h18M3 12h18M3 18h18"/>';
+});
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mnav.classList.remove('open');burger.setAttribute('aria-expanded','false');
+  document.getElementById('burgerIco').innerHTML='<path d="M3 6h18M3 12h18M3 18h18"/>';
+}));
+
 // lightbox
 const lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg');
 document.querySelectorAll('[data-img]').forEach(el=>{
-  el.addEventListener('click',()=>{lbimg.src=el.dataset.img;lb.classList.add('open');});
+  el.addEventListener('click',()=>{lbimg.src=el.dataset.img;lb.classList.add('open');document.body.style.overflow='hidden';});
 });
-lb.addEventListener('click',()=>lb.classList.remove('open'));
-document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open');});
-
+function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+lb.addEventListener('click',closeLb);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
 // reveal on scroll
 const io=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
@@ -744,6 +835,37 @@ const io=new IntersectionObserver(es=>{
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 // fallback: если observer не сработал, показать всё
 setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(el=>el.classList.add('in')),4000);
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"ProfessionalService",
+      "name":"Жалгас Толыбаев — патентный поверенный",
+      "description":"Регистрация патентов, товарных знаков, промышленных образцов и авторских прав в Казахстане, странах ЕАПО и по международным процедурам PCT и Мадридской системы.",
+      "telephone":"+77066706010",
+      "email":"zhalgas.tolybayev@gmail.com",
+      "address":{"@type":"PostalAddress","addressLocality":"Астана","addressCountry":"KZ"},
+      "areaServed":["Казахстан","ЕАЭС","Международно"],
+      "founder":{
+        "@type":"Person",
+        "name":"Толыбаев Жалгас Манатович",
+        "jobTitle":"Евразийский и казахстанский патентный поверенный",
+        "knowsAbout":["патенты","товарные знаки","промышленные образцы","авторское право","PCT","Мадридская система"]
+      }
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Сколько времени занимает регистрация товарного знака?","acceptedAnswer":{"@type":"Answer","text":"В Казахстане полная процедура обычно занимает порядка 7-12 месяцев. Предварительная проверка на сходство до подачи снижает риск отказа."}},
+        {"@type":"Question","name":"Можно ли запатентовать программу или ИИ-решение?","acceptedAnswer":{"@type":"Answer","text":"Код охраняется авторским правом, а техническое решение во многих случаях можно запатентовать как изобретение или полезную модель."}},
+        {"@type":"Question","name":"Что даёт евразийский патент?","acceptedAnswer":{"@type":"Answer","text":"Одна заявка в ЕАПВ - и патент действует сразу в восьми странах региона, включая Казахстан и Россию."}},
+        {"@type":"Question","name":"Как защититься на рынках США, Европы или Азии?","acceptedAnswer":{"@type":"Answer","text":"Для патентов используется процедура PCT, для товарных знаков - Мадридская система, на национальных фазах работа координируется с местными поверенными."}}
+      ]
+    }
+  ]
+}
 </script>
 </body>
 </html>
