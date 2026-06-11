@@ -9,12 +9,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Жалгас Толыбаев — патентный поверенный">
 <meta property="og:description" content="Патенты, товарные знаки и дизайн в Казахстане, странах ЕАПО и по международным процедурам. От заявки до охранного документа.">
-<meta property="og:image" content="https://sultanaskarovkz-bit.github.io/patent/hero.jpg">
+<meta property="og:image" content="https://sultanaskarovkz-bit.github.io/patent/ph_2287.jpg">
 <meta property="og:url" content="https://sultanaskarovkz-bit.github.io/patent/">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23F5EFE0' stroke='%23A9853B' stroke-width='5'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia,serif' font-size='42' fill='%238A6C2C'%3E%E2%84%96%3C/text%3E%3C/svg%3E">
-<link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="ph_2287.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -152,6 +152,35 @@ nav.menu a:hover{color:var(--gold-deep);border-color:var(--gold)}
 .cred b{color:var(--gold-deep);font-weight:600}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
 .hero-stats{display:flex;gap:44px;border-top:1px solid var(--line);padding-top:26px}
+.latin{
+  font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold-deep);margin:-8px 0 20px;
+}
+
+/* карусель в рамке чертежа */
+.carousel{position:relative;overflow:hidden;border-radius:8px;aspect-ratio:4/3;background:#E9EDF2}
+.car-track{display:flex;height:100%;transition:transform .55s cubic-bezier(.33,.8,.3,1)}
+@media (prefers-reduced-motion:reduce){.car-track{transition:none}}
+.car-track img{width:100%;height:100%;flex:none;object-fit:cover;border-radius:0}
+.car-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:40px;height:40px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.88);color:var(--ink);font-size:24px;line-height:1;
+  display:grid;place-items:center;box-shadow:0 6px 18px -6px rgba(20,33,58,.4);
+  transition:background .2s,transform .2s;
+}
+.car-btn:hover{background:#fff;transform:translateY(-50%) scale(1.07)}
+.car-btn.prev{left:12px}
+.car-btn.next{right:12px}
+.car-dots{
+  position:absolute;left:0;right:0;bottom:10px;
+  display:flex;justify-content:center;gap:7px;
+}
+.car-dots button{
+  width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(255,255,255,.55);padding:0;transition:background .2s,transform .2s;
+}
+.car-dots button.on{background:var(--gold);transform:scale(1.25)}
 .hstat .n{font-family:'Prata',serif;font-size:30px;color:var(--ink)}
 .hstat .l{font-size:13px;color:var(--slate);margin-top:2px;max-width:140px;line-height:1.45}
 
@@ -191,8 +220,7 @@ nav.menu a:hover{color:var(--gold-deep);border-color:var(--gold)}
 @media (prefers-reduced-motion:reduce){.seal{animation:none}}
 @media(max-width:980px){
   .hero .wrap{grid-template-columns:1fr;gap:44px;padding-top:48px;padding-bottom:56px}
-  .hero .fig{max-width:420px;margin:0 auto;width:100%}
-  .hero .fig img{aspect-ratio:4/5;object-fit:cover;object-position:50% 28%}
+  .hero .fig{max-width:460px;margin:0 auto;width:100%}
   .seal{right:-8px;bottom:48px;width:96px;height:96px}
   .hero-stats{gap:14px;flex-wrap:wrap;justify-content:space-between}
   .hstat{flex:1 1 30%;min-width:96px}
@@ -443,11 +471,12 @@ footer .mono{font-size:11px;letter-spacing:.08em}
     <div>
       <div class="inid">(72) · Патентный поверенный · Казахстан и ЕАЭС</div>
       <h1 class="display">Защищаю идеи так, чтобы они приносили <em>деньги, а&nbsp;не&nbsp;споры</em></h1>
+      <div class="latin">Zhalgas Tolybayev · Patent &amp; Trademark Attorney</div>
       <p class="lead">Меня зовут Жалгас Толыбаев. Я сопровождаю патенты, товарные знаки и дизайн от первой консультации до охранного документа — в Казахстане, странах ЕАПО и по международным процедурам.</p>
       <div class="cred-row">
         <span class="cred">Патентный поверенный РК <b>№ 174</b></span>
-        <span class="cred">Евразийский поверенный <b>№ 490</b></span>
-        <span class="cred">Аттестация ЕАПВ <b>№ 89</b></span>
+        <span class="cred">Евразийский поверенный <b>№ 490</b> · изобретения</span>
+        <span class="cred">Евразийский поверенный <b>№ 89</b> · пром. образцы</span>
       </div>
       <div class="hero-cta">
         <a class="btn btn-gold" href="https://wa.me/77066706010?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%96%D0%B0%D0%BB%D0%B3%D0%B0%D1%81!%20%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BF%D0%BE%20%D0%B8%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B9%20%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" target="_blank" rel="noopener">
@@ -460,16 +489,27 @@ footer .mono{font-size:11px;letter-spacing:.08em}
         </a>
       </div>
       <div class="hero-stats">
-        <div class="hstat"><div class="n">9+</div><div class="l">лет практики поверенного</div></div>
-        <div class="hstat"><div class="n">3</div><div class="l">аттестации: РК и ЕАПВ</div></div>
-        <div class="hstat"><div class="n">8</div><div class="l">стран по одному евразийскому патенту</div></div>
+        <div class="hstat"><div class="n">РК + ЕАПВ</div><div class="l">аттестации в государственных реестрах</div></div>
+        <div class="hstat"><div class="n">Полный цикл</div><div class="l">от проверки идеи до выдачи документа</div></div>
+        <div class="hstat"><div class="n">Весь мир</div><div class="l">процедуры PCT и Мадридской системы</div></div>
       </div>
     </div>
     <div class="fig">
       <div class="fig-sheet">
         <div class="fig-inner"></div>
-        <img src="hero.jpg" alt="Жалгас Толыбаев, патентный поверенный, с охранным документом клиента" width="1100" height="1320">
-        <div class="fig-cap"><span><b>ФИГ. 1</b> — Толыбаев Ж. М.</span><span>Астана, 2026</span></div>
+        <div class="carousel" id="car">
+          <div class="car-track" id="carTrack">
+            <img src="ph_2287.jpg" alt="Жалгас Толыбаев, патентный поверенный" fetchpriority="high">
+            <img src="ph_2305.jpg" alt="Делопроизводство по заявке" loading="lazy">
+            <img src="ph_2393.jpg" alt="Охранные документы клиентов" loading="lazy">
+            <img src="ph_2414.jpg" alt="Жалгас Толыбаев, Астана" loading="lazy">
+            <img src="ph_2346.jpg" alt="Консультация в офисе" loading="lazy">
+          </div>
+          <button class="car-btn prev" id="carPrev" aria-label="Предыдущее фото">&#8249;</button>
+          <button class="car-btn next" id="carNext" aria-label="Следующее фото">&#8250;</button>
+          <div class="car-dots" id="carDots"></div>
+        </div>
+        <div class="fig-cap"><span id="carCap"><b>ФИГ. 1</b> — Толыбаев Ж. М., патентный поверенный</span><span>Астана</span></div>
       </div>
       <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
         <defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
@@ -479,7 +519,7 @@ footer .mono{font-size:11px;letter-spacing:.08em}
           <textPath href="#circ">ИНТЕЛЛЕКТУАЛЬНАЯ СОБСТВЕННОСТЬ · KZ · EAPO ·</textPath>
         </text>
         <text x="60" y="56" text-anchor="middle" font-family="Prata,serif" font-size="15" fill="#8A6C2C">№174</text>
-        <text x="60" y="74" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" letter-spacing="1.5" fill="#A9853B">С 2017 ГОДА</text>
+        <text x="60" y="74" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" letter-spacing="1.5" fill="#A9853B">KZ · ЕАПВ · PCT</text>
       </svg>
     </div>
   </div>
@@ -548,39 +588,84 @@ footer .mono{font-size:11px;letter-spacing:.08em}
   </div>
 </section>
 
-<!-- DOCS / RESULTS -->
+<!-- DOCS / EXAMPLES -->
 <section class="docs" id="docs">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="inid">(11) · Номера охранных документов</div>
-      <h2 class="display">Не обещания, а выданные документы</h2>
-      <p>Реальные патенты и свидетельства, полученные по заявкам, которые я сопровождал. Нажмите, чтобы рассмотреть.</p>
+      <div class="inid">(11) · Типы охранных документов</div>
+      <h2 class="display">Примеры охранных документов</h2>
+      <p>По одному примеру каждого типа документов, которые я получаю для клиентов — от Казахстана и ЕАПВ до США, Германии и Гонконга. Нажмите, чтобы рассмотреть.</p>
     </div>
     <div class="doc-rail rv">
-      <div class="doc" data-img="case_us.jpg">
-        <img src="case_us.jpg" alt="Патент США US 12,005,088" loading="lazy">
-        <div class="t">Патент США</div>
-        <div class="s">US 12,005,088 B2 · USPTO</div>
+      <div class="doc" data-img="ex_kz_inv.jpg">
+        <img src="ex_kz_inv.jpg" alt="Патент на изобретение, Казахстан" loading="lazy">
+        <div class="t">Патент на изобретение</div>
+        <div class="s">Казахстан · № 34416</div>
       </div>
-      <div class="doc" data-img="case_inv1.jpg">
-        <img src="case_inv1.jpg" alt="Евразийский патент на изобретение №050354" loading="lazy">
+      <div class="doc" data-img="ex_kz_um.jpg">
+        <img src="ex_kz_um.jpg" alt="Патент на полезную модель, Казахстан" loading="lazy">
+        <div class="t">Патент на полезную модель</div>
+        <div class="s">Казахстан · № 11204</div>
+      </div>
+      <div class="doc" data-img="ex_kz_des.jpg">
+        <img src="ex_kz_des.jpg" alt="Патент на промышленный образец, Казахстан" loading="lazy">
+        <div class="t">Патент на промышленный образец</div>
+        <div class="s">Казахстан · № 3297</div>
+      </div>
+      <div class="doc" data-img="ex_kz_tm.jpg">
+        <img src="ex_kz_tm.jpg" alt="Свидетельство на товарный знак, Казахстан" loading="lazy">
+        <div class="t">Товарный знак</div>
+        <div class="s">Казахстан · свидетельство № 99793</div>
+      </div>
+      <div class="doc" data-img="ex_kz_c.jpg">
+        <img src="ex_kz_c.jpg" alt="Свидетельство об авторском праве, Казахстан" loading="lazy">
+        <div class="t">Авторское право</div>
+        <div class="s">Казахстан · свидетельство № 58699</div>
+      </div>
+      <div class="doc" data-img="ex_kz_pbr.jpg">
+        <img src="ex_kz_pbr.jpg" alt="Патент на селекционное достижение, Казахстан" loading="lazy">
+        <div class="t">Селекционное достижение</div>
+        <div class="s">Казахстан · патент № 1159</div>
+      </div>
+      <div class="doc" data-img="ex_ea_inv.jpg">
+        <img src="ex_ea_inv.jpg" alt="Евразийский патент на изобретение" loading="lazy">
         <div class="t">Евразийский патент на изобретение</div>
-        <div class="s">№ 050354 · ЕАПВ · 8 стран</div>
+        <div class="s">ЕАПВ · одна заявка — 8 стран</div>
       </div>
-      <div class="doc" data-img="case_inv2.jpg">
-        <img src="case_inv2.jpg" alt="Евразийский патент на изобретение №051768" loading="lazy">
-        <div class="t">Евразийский патент на изобретение</div>
-        <div class="s">№ 051768 · ЕАПВ · 8 стран</div>
+      <div class="doc" data-img="ex_ea_des.jpg">
+        <img src="ex_ea_des.jpg" alt="Евразийский патент на промышленный образец" loading="lazy">
+        <div class="t">Евразийский патент на пром. образец</div>
+        <div class="s">ЕАПВ · № 000673</div>
       </div>
-      <div class="doc" data-img="case_pm.jpg">
-        <img src="case_pm.jpg" alt="Патент РК на полезную модель №11204" loading="lazy">
-        <div class="t">Патент РК на полезную модель</div>
-        <div class="s">№ 11204 · Казпатент</div>
+      <div class="doc" data-img="ex_pct.jpg">
+        <img src="ex_pct.jpg" alt="Международная патентная заявка PCT" loading="lazy">
+        <div class="t">Международная патентная заявка</div>
+        <div class="s">Система PCT · ВОИС</div>
       </div>
-      <div class="doc" data-img="case_tz.jpg">
-        <img src="case_tz.jpg" alt="Свидетельство на товарный знак №99793" loading="lazy">
-        <div class="t">Свидетельство на товарный знак</div>
-        <div class="s">№ 99793 · Республика Казахстан</div>
+      <div class="doc" data-img="ex_madrid.jpg">
+        <img src="ex_madrid.jpg" alt="Международная регистрация товарного знака, Мадридская система" loading="lazy">
+        <div class="t">Международный товарный знак</div>
+        <div class="s">Мадридская система · ВОИС</div>
+      </div>
+      <div class="doc" data-img="ex_us.jpg">
+        <img src="ex_us.jpg" alt="Патент США" loading="lazy">
+        <div class="t">Патент на изобретение · США</div>
+        <div class="s">USPTO · US 12,005,088 B2</div>
+      </div>
+      <div class="doc" data-img="ex_de.jpg">
+        <img src="ex_de.jpg" alt="Полезная модель, Германия" loading="lazy">
+        <div class="t">Полезная модель · Германия</div>
+        <div class="s">DPMA · DE 20 2026 101 051</div>
+      </div>
+      <div class="doc" data-img="ex_hk.jpg">
+        <img src="ex_hk.jpg" alt="Краткосрочный патент, Гонконг" loading="lazy">
+        <div class="t">Краткосрочный патент · Гонконг</div>
+        <div class="s">IPD HK · № 30105100</div>
+      </div>
+      <div class="doc" data-img="ex_us_c.jpg">
+        <img src="ex_us_c.jpg" alt="Регистрация авторского права, США" loading="lazy">
+        <div class="t">Авторское право · США</div>
+        <div class="s">US Copyright Office · TXu 2-487-960</div>
       </div>
     </div>
   </div>
@@ -602,11 +687,11 @@ footer .mono{font-size:11px;letter-spacing:.08em}
       <p>Я — <b>казахстанский и евразийский патентный поверенный</b>. Помогаю стартапам, производственным компаниям и авторам превращать разработки в защищённые активы: от первой проверки идеи до выданного патента и работы с нарушителями.</p>
       <p>Веду заявки в том числе по <b>сложным направлениям — IT, ИИ, инженерным решениям</b>, где важно правильно сформулировать, что именно охраняется. Сопровождаю международные процедуры, чтобы ваши проекты были защищены не только на локальном рынке, но и глобально.</p>
       <div class="timeline">
-        <div class="tl"><div class="y">2017</div><div class="d">Аттестован патентным поверенным Республики Казахстан, реестр № 174</div></div>
-        <div class="tl"><div class="y">2018</div><div class="d">Зарегистрирован евразийским патентным поверенным, реестр № 490</div></div>
-        <div class="tl"><div class="y">2019–2021</div><div class="d">Программы Академии ВОИС: патенты, товарные знаки, авторское право, PCT, патентный поиск</div></div>
-        <div class="tl"><div class="y">2022</div><div class="d">Аттестация ЕАПВ по промышленным образцам, свидетельство № 89</div></div>
-        <div class="tl"><div class="y">2024</div><div class="d">Курс JPO/IPR Патентного ведомства Японии по товарным знакам</div></div>
+        <div class="tl"><div class="y">РЕЕСТР РК · № 174</div><div class="d">Патентный поверенный Республики Казахстан</div></div>
+        <div class="tl"><div class="y">РЕЕСТР ЕАПВ · № 490</div><div class="d">Евразийский патентный поверенный — изобретения</div></div>
+        <div class="tl"><div class="y">ЕАПВ · СВИДЕТЕЛЬСТВО № 89</div><div class="d">Евразийский патентный поверенный — промышленные образцы</div></div>
+        <div class="tl"><div class="y">АКАДЕМИЯ ВОИС</div><div class="d">Программы по патентам, товарным знакам, авторскому праву, системе PCT и патентному поиску</div></div>
+        <div class="tl"><div class="y">JPO · ЯПОНИЯ</div><div class="d">Курс JPO/IPR Патентного ведомства Японии по товарным знакам</div></div>
       </div>
     </div>
   </div>
@@ -624,22 +709,22 @@ footer .mono{font-size:11px;letter-spacing:.08em}
       <div class="q" data-img="att_kz.jpg">
         <img src="att_kz.jpg" alt="Свидетельство патентного поверенного РК №174" loading="lazy">
         <div class="t">Патентный поверенный РК</div>
-        <div class="s">Минюст РК · № 174 · 2017</div>
+        <div class="s">Минюст РК · реестр № 174</div>
       </div>
       <div class="q" data-img="att_eapp.jpg">
         <img src="att_eapp.jpg" alt="Свидетельство евразийского патентного поверенного №490" loading="lazy">
-        <div class="t">Евразийский патентный поверенный</div>
-        <div class="s">ЕАПВ · № 490 · 2018</div>
+        <div class="t">Евразийский патентный поверенный (изобретения)</div>
+        <div class="s">ЕАПВ · реестр № 490</div>
       </div>
       <div class="q" data-img="att_eapo.jpg">
         <img src="att_eapo.jpg" alt="Свидетельство ЕАПВ по промышленным образцам №89" loading="lazy">
-        <div class="t">Промышленные образцы</div>
-        <div class="s">ЕАПВ · № 89 · 2022</div>
+        <div class="t">Евразийский патентный поверенный (промышленные образцы)</div>
+        <div class="s">ЕАПВ · свидетельство № 89</div>
       </div>
       <div class="q" data-img="case_japan.jpg">
         <img src="case_japan.jpg" alt="Сертификат JPO/IPR по товарным знакам, Япония" loading="lazy">
         <div class="t">JPO/IPR — товарные знаки</div>
-        <div class="s">Japan Patent Office · 2024</div>
+        <div class="s">Japan Patent Office · JPO/IPR</div>
       </div>
       <div class="q" data-img="wipo_dl301.jpg">
         <img src="wipo_dl301.jpg" alt="Сертификат Академии ВОИС по патентам" loading="lazy">
@@ -790,9 +875,9 @@ footer .mono{font-size:11px;letter-spacing:.08em}
 
 <footer>
   <div class="wrap">
-    <div><b>Жалгас Толыбаев</b> · евразийский и казахстанский патентный поверенный</div>
+    <div><b>Жалгас Толыбаев</b> · евразийский и казахстанский патентный поверенный<br><span class="mono" style="font-size:10.5px;letter-spacing:.14em">ZHALGAS TOLYBAYEV · PATENT &amp; TRADEMARK ATTORNEY</span></div>
     <div class="mono">(11) (22) (54) (57) (72) — коды ИНИД из патентных документов, которыми я работаю каждый день</div>
-    <div>© 2026 · Астана</div>
+    <div>Астана, Казахстан</div>
   </div>
 </footer>
 
@@ -806,6 +891,55 @@ footer .mono{font-size:11px;letter-spacing:.08em}
 </div>
 
 <script>
+// карусель hero
+(function(){
+  const track=document.getElementById('carTrack');
+  if(!track)return;
+  const slides=track.children, n=slides.length;
+  const dotsBox=document.getElementById('carDots');
+  const cap=document.getElementById('carCap');
+  const labels=[
+    '<b>ФИГ. 1</b> — Толыбаев Ж. М., патентный поверенный',
+    '<b>ФИГ. 2</b> — делопроизводство по заявке',
+    '<b>ФИГ. 3</b> — охранные документы клиентов',
+    '<b>ФИГ. 4</b> — Астана, Казахстан',
+    '<b>ФИГ. 5</b> — консультация в офисе'
+  ];
+  let i=0,timer=null;
+  for(let k=0;k<n;k++){
+    const b=document.createElement('button');
+    b.setAttribute('aria-label','Фото '+(k+1));
+    b.addEventListener('click',()=>{go(k);restart();});
+    dotsBox.appendChild(b);
+  }
+  const dots=dotsBox.children;
+  function go(k){
+    i=(k+n)%n;
+    track.style.transform='translateX(-'+(i*100)+'%)';
+    for(let d=0;d<n;d++)dots[d].classList.toggle('on',d===i);
+    if(labels[i])cap.innerHTML=labels[i];
+  }
+  function restart(){
+    if(timer)clearInterval(timer);
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches)
+      timer=setInterval(()=>go(i+1),4500);
+  }
+  document.getElementById('carPrev').addEventListener('click',()=>{go(i-1);restart();});
+  document.getElementById('carNext').addEventListener('click',()=>{go(i+1);restart();});
+  const car=document.getElementById('car');
+  car.addEventListener('mouseenter',()=>timer&&clearInterval(timer));
+  car.addEventListener('mouseleave',restart);
+  let x0=null;
+  car.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;timer&&clearInterval(timer);},{passive:true});
+  car.addEventListener('touchend',e=>{
+    if(x0===null)return;
+    const dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>40)go(i+(dx<0?1:-1));
+    x0=null;restart();
+  },{passive:true});
+  go(0);restart();
+})();
+
 // мобильное меню
 const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
 burger.addEventListener('click',()=>{
