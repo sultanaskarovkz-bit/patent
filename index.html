@@ -15,17 +15,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://grantens.com/">
 
-<!-- ============================================================
-     GOOGLE ADS / ANALYTICS (Google tag)
-     TODO: замените G-XXXXXXX / AW-XXXXXXX на ваш реальный Google tag ID.
-     Метку конверсии впишите ниже в блоке <script> (CONV_LABEL_*).
-     ============================================================ -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"></script>
+<!-- Google tag (gtag.js) — Google Ads AW-18291452212 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18291452212"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-XXXXXXX');
+  gtag('config', 'AW-18291452212');
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23F5EFE0' stroke='%23A9853B' stroke-width='5'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia,serif' font-size='42' fill='%238A6C2C'%3E%E2%84%96%3C/text%3E%3C/svg%3E">
 <link rel="preload" as="image" href="ph_2393.jpg" fetchpriority="high">
@@ -1163,13 +1159,15 @@ setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(el=>el.classLis
   const TG_BOT_TOKEN = '8603460545:AAGev93H8Kn0td9g87Qhrjyef-J2v_Iu-_8';
   const TG_CHAT_ID   = '-5389029711'; // группа «Заявки Жалгас Толыбаев»
 
-  // --- Метки конверсии Google Ads ---
-  // TODO: после настройки конверсий в Google Ads впишите сюда 'AW-XXXXXXX/метка'
-  const CONV_LEAD = '';  // конверсия «отправлена заявка»
-  const CONV_CALL = '';  // конверсия «клик по кнопке звонка»
+  // --- Конверсии Google Ads (AW-18291452212) ---
+  // Создайте 2 конверсионных действия в Google Ads и впишите ТОЛЬКО их метки
+  // (label вида 'AbC-D_efGhIj'). Пока пусто — события не отправляются.
+  const AW_ID     = 'AW-18291452212';
+  const CONV_LEAD = '';  // метка конверсии «отправлена заявка»
+  const CONV_CALL = '';  // метка конверсии «клик по кнопке звонка»
   function fireConversion(label){
     if(typeof gtag==='function' && label){
-      gtag('event','conversion',{send_to:label});
+      gtag('event','conversion',{send_to: AW_ID + '/' + label});
     }
   }
 
