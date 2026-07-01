@@ -1163,8 +1163,8 @@ setTimeout(()=>document.querySelectorAll('.rv:not(.in)').forEach(el=>el.classLis
   // Создайте 2 конверсионных действия в Google Ads и впишите ТОЛЬКО их метки
   // (label вида 'AbC-D_efGhIj'). Пока пусто — события не отправляются.
   const AW_ID     = 'AW-18291452212';
-  const CONV_LEAD = '';  // метка конверсии «отправлена заявка»
-  const CONV_CALL = '';  // метка конверсии «клик по кнопке звонка»
+  const CONV_LEAD = '';                        // метка конверсии «отправлена заявка» (форма) — впишите после создания
+  const CONV_CALL = 'd5WmCI3skckcELTShZJE';    // метка конверсии «клик по номеру на сайте» (звонок)
   function fireConversion(label){
     if(typeof gtag==='function' && label){
       gtag('event','conversion',{send_to: AW_ID + '/' + label});
